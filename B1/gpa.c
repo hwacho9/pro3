@@ -1,42 +1,76 @@
 #include <stdio.h>
 
-int main(void) {
-    double a;
+int main(void)
+{
+    int score;
     double s;
-    double buf[30] = {0, };
+    int count = 0;
 
-    for (;;) {
+    for (;;)
+    {
         fprintf(stderr, "点数を入力して下さい");
-        // if (scanf("%lf", &a)==EOF) {
-        //     break;
-        // }
-        if ( a >= 90 && a <= 100 ) {
-            printf("%f\n", a);
-            double s++;
+        if (scanf("%d", &score) == EOF)
+        {
+            break;
         }
-        else if ( a >= 85 && a <= 89 ) {
+
+        if (score >= 90 && score <= 100)
+        {
+            printf("4.0\n");
+            s += 4.0;
+        }
+        else if (score >= 85 && score <= 89)
+        {
             printf("3.5\n");
-            double a++;
+            s += 3.5;
         }
-        else if ( a >= 80 && a <= 84 ) {
+        else if (score >= 80 && score <= 84)
+        {
             printf("3.0\n");
-            double b++;
+            s += 3.0;
         }
-        // else if ( a >= 75 && a <= 79 ) {
-        //     printf("2.5\n");
-        //     double c++;
-        // }
-        // else if ( a >= 70 && a <= 74 ) {
-        //     printf("2.0\n");
-        //     double d++;
-        // }
-        // else if ( a >= 65 && a <= 69 ) {
-        //     printf("1.5\n");
-        //     double e++;
-        // }
-        // else if ( a >= 60 && a <= 64 ) {
-        //     printf("1.0\n");
-        //     double f++;
+        else if (score >= 75 && score <= 79)
+        {
+            printf("2.5\n");
+            s += 2.5;
         }
+        else if (score >= 70 && score <= 74)
+        {
+            printf("2.0\n");
+            s += 2.0;
+        }
+        else if (score >= 65 && score <= 69)
+        {
+            printf("1.5\n");
+            s += 1.5;
+        }
+        else if (score >= 60 && score <= 64)
+        {
+            printf("1.0\n");
+            s += 1.0;
+        }
+        else if (score >= 0 && score < 60)
+        {
+            printf("0.0\n");
+            s += 0.0;
+        }
+        else
+        {
+            continue;
+        }
+
+        count++;
     }
+
+    if (count > 0)
+    {
+        double average = s / count;
+        printf("%.3lf\n", average);
+    }
+    else
+    {
+        fprintf(stderr, "データがありません。\n");
+    }
+
+    return 0;
 }
