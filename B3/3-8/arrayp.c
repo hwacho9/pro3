@@ -9,9 +9,22 @@ int main(void) {
 
     for ( int i = 0; i < k; i++)
     {
-        printf("%d ", x[i]);
-        printf("%p\n", &x[i]);
+        printf("x[%d] : %d, ", i, x[i]);
+        printf("x[%d] の値 (アドレス) : %p\n", i, &x[i]);
     }
+
+    printf("x の値 (アドレス) : %p\n", &x);
+
+    for ( int i = 0; i < k; i++)
+    {
+        printf("x+%d に格納されているデータの値 : %d, ", i, *(x + i));
+        printf("x+%d (アドレス) : %p\n", i, &x + i);
+    }
+
+    int *p;
+    p = &x[2];
+    printf("%p\n", &p+2);
+    printf("%p\n", &p[2]);
 
     return 0;
 }

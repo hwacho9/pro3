@@ -17,15 +17,28 @@ int main(void)
 
 int array_scan(int a[ ])
 {
-    for ( int i = 0; i < MAX; i++)
+    int i;
+    for ( i = 0; i < MAX; i++)
     {
-        printf("%d", a[i]);
-        return a[i];
-        // if (scanf(""))
+        fprintf(stderr, "a[%d] = ", i);
+        if (scanf( "%d", &a[i])==EOF) { break; }
     }
+
+    return i;
 }
 
 void array_ave_max(int n, int a[ ], double *ave, int *max)
 {
     
+    int sum = a[0];
+    *max = a[0];
+
+    for ( int i = 1; i < n; i ++) {
+        sum += a[i];
+        if ( a[i] > *max ) {
+            *max = a[i];
+        }
+    }
+
+    *ave = (double)sum / n;
 }
