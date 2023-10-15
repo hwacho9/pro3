@@ -24,7 +24,7 @@ int main(void) {
     int *p;
     p = &x[2];
     printf("%p\n", &p+2);
-    printf("%p\n", &p[2]);
+    printf("%d\n", p[2]);
 
     return 0;
 }
