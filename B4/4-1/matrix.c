@@ -36,6 +36,7 @@ void matrix_sum(int n, double A[N][N], double B[N][N], double Y[N][N]) {
       }
    }
 }
+
 void matrix_trans2(int n, double A[N][N], double Y[N][N]) {
    int i, j;
    for ( i = 0; i<n; i++) {
@@ -60,7 +61,7 @@ void matrix_trans1(int n, double A[N][N]) {
    }
 }
 void vector_scan(int n, double x[N]) {
-    int i;
+   int i;
    for ( i = 0; i < n; i++) {
          fprintf(stderr, "[%d][0]", i);
          scanf("%lf", &x[i]);
