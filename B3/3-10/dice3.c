@@ -19,12 +19,25 @@ int main(void)
    srand(1);
    for (i=D3_MIN; i<=D3_MAX; i++) {
       c[i] = rand();
-	 }
+	}
 
-   srand(1);
    dice_throw(d1, n);
    dice_throw(d2, n);
    dice_throw(d3, n);
+   
+   for ( int i =0; i < n; i++ ){
+      printf("%d ", d1[i]);
+   }
+   printf("\n");
+   for ( int i =0; i < n; i++ ){
+      printf("%d ", d2[i]);
+   }
+   printf("\n");
+   for ( int i =0; i < n; i++ ){
+      printf("%d ", d3[i]);
+   }
+   printf("\n");
+
    dice3_distr(n, d1, d2, d3, c);
 
    for (i=D3_MIN; i<=D3_MAX; i++) {
