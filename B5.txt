@@ -1,0 +1,169 @@
+科目名: プログラミング実習III
+課題: B5
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年11月05日
+
+----------------------------------------
+
+[課題 5.1]
+
+結果：
+
+chosunghwa@joseongcBookAir 5-1 % gcc main2.c array_scan.c
+chosunghwa@joseongcBookAir 5-1 % ./a.out < in.txt > out.txt
+chosunghwa@joseongcBookAir 5-1 % diff -w out.txt exp.txt
+chosunghwa@joseongcBookAir 5-1 %
+
+
+感想：
+Malloc 関数を使う方法学ぶことができました。
+----------------------------------------
+
+[課題 5.2]
+
+結果：
+gcc distr.c array_scan.c
+chosunghwa@joseongcBookAir 5-2 % ./a.out < in.txt > out.txt
+chosunghwa@joseongcBookAir 5-2 % diff -w out.txt exp.txt
+chosunghwa@joseongcBookAir 5-2 %
+
+感想：
+初期化するのを忘れ、答えが得られなかったんでしたから初期化をすることを忘れないようにまた思いました。
+
+----------------------------------------
+[課題 5.3]
+
+結果：
+
+chosunghwa@joseongcBookAir 5-3 % gcc main2.c strdouble.c  
+chosunghwa@joseongcBookAir 5-3 % ./a.out < in.txt >out.txt
+s = s = s = %                                                                                                                                                                                                                           
+chosunghwa@joseongcBookAir 5-3 % diff -w out.txt exp.txt  
+chosunghwa@joseongcBookAir 5-3 %
+
+感想：
+文字列をコビーする時文字列の最後の’\0’もコビーすることを学び、strcpy, strcatを使わずにコビーする方法を工夫しました。
+
+
+----------------------------------------
+[課題 5.4]
+
+結果：
+
+chosunghwa@joseongcBookAir 5-4 % gcc linereverse.c         
+chosunghwa@joseongcBookAir 5-4 % ./a.out < in.txt > out.txt
+
+感想：
+Lineの配列に文字列を入れるデータ構造をどう作るかに関して工夫しました。
+
+----------------------------------------
+[課題 5.5]
+
+結果：
+
+chosunghwa@joseongcBookAir B5 % cd 5-5
+chosunghwa@joseongcBookAir 5-5 % gcc pref.c pref1main.c
+chosunghwa@joseongcBookAir 5-5 % ./a.out 
+Tokyo        2187.65  12988797
+Osaka        1898.01   8840372
+Hyogo        8395.89   5599359
+chosunghwa@joseongcBookAir 5-5 %
+
+感想：
+
+構造体を動的に割り当てる方法を学ぶことができました。
+
+----------------------------------------
+[課題 5.6]
+
+結果：
+
+chosunghwa@joseongcBookAir 5-6 % gcc pref2main.c pref.c
+chosunghwa@joseongcBookAir 5-6 % ./a.out
+Tokyo        2187.65  12988797
+Osaka        1898.01   8840372
+Hyogo        8395.89   5599359
+chosunghwa@joseongcBookAir 5-6 %
+
+感想：
+
+Pref1main.cをpref2main.cに変えるとき構造体に配列として割り当てる方法ことを工夫、実装しました。
+
+----------------------------------------
+[課題 5.7]
+
+結果：
+chosunghwa@joseongcBookAir 5-7 % gcc pref.c pref3main.c
+chosunghwa@joseongcBookAir 5-7 % ./a.out < in.txt > out.txt
+chosunghwa@joseongcBookAir 5-7 % diff -w out.txt exp.txt
+chosunghwa@joseongcBookAir 5-7 %
+
+感想：
+5-3のlinereverse.cのように逆出力をする方法を工夫し、実装しました。
+
+----------------------------------------
+[課題 5.8]
+
+結果：
+(1)
+chosunghwa@joseongcBookAir 5-8 % gcc main.c istack.c
+chosunghwa@joseongcBookAir 5-8 % ./a.out
+(size = 8, sp = 0, data = [ ])
+
+(2)
+chosunghwa@joseongcBookAir 5-8 % gcc main.c istack.c
+chosunghwa@joseongcBookAir 5-8 % ./a.out            
+(size = 4, sp = 0, data = [ ])
+(size = 4, sp = 2, data = [ 5 6 ])
+(size = 4, sp = 4, data = [ 5 6 2 8 ])
+(size = 4, sp = 4, data = [ 5 6 2 8 ])
+chosunghwa@joseongcBookAir 5-8 %
+
+(3)
+chosunghwa@joseongcBookAir 5-8 % ./a.out            
+(size = 4, sp = 4, data = [ 5 6 2 8 ])
+d = 8
+(size = 4, sp = 3, data = [ 5 6 2 ])
+d = 2
+d = 6
+d = 5
+(size = 4, sp = 0, data = [ ])
+d = 0
+(size = 4, sp = 0, data = [ ])
+chosunghwa@joseongcBookAir 5-8 %
+(4)
+
+chosunghwa@joseongcBookAir 5-8 % gcc main.c istack.c
+^[[A%                                                                                                                                                                                                                                   
+chosunghwa@joseongcBookAir 5-8 % ./a.out            
+(size = 4, sp = 0, data = [ ])
+empty = 1, full = 0
+(size = 4, sp = 2, data = [ 5 6 ])
+empty = 0, full = 0
+(size = 4, sp = 4, data = [ 5 6 2 8 ])
+empty = 0, full = 1
+(size = 4, sp = 2, data = [ 5 6 ])
+empty = 0, full = 0
+(size = 4, sp = 0, data = [ ])
+empty = 1, full = 0
+chosunghwa@joseongcBookAir 5-8 %
+
+
+(5)
+chosunghwa@joseongcBookAir 5-8 % ./a.out            
+(size = 4, sp = 4, data = [ 5 6 2 8 ])
+(size = 8, sp = 6, data = [ 5 6 2 8 2 8 ])
+
+(6)
+chosunghwa@joseongcBookAir 5-8 % gcc istack.c istacktest.c
+chosunghwa@joseongcBookAir 5-8 % ./a.out > out.txt
+chosunghwa@joseongcBookAir 5-8 % diff -w out.txt exp.txt  
+
+感想：
+整数型のスタックに関して理解することができました。
+
+----------------------------------------
+
+[課題 B5 の感想]
+Mallocを利用した動的割当、構造体の動的割当、構造体のスタックに関して学ぶことができた授業でした。特に、5-8を解く時一番工夫、調査して勉強、理解が一番できました。

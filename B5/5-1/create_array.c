@@ -41,5 +41,3 @@ double *create_darray_n_d(int n, double d)
 
    return x;
 }
-
-i
