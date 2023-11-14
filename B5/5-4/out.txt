@@ -1,4 +1,5 @@
-AHB - Abha : Saudi Arabia - Abha AirportAES - Aalesund : Norway Vigra 
+AHB - Abha : Saudi Arabia - Abha Airport
+AES - Aalesund : Norway Vigra 
 ABZ - Aberdeen : Scotland : United Kingdom Dyce 
 ABR - Aberdeen : SD : USA Aberdeen Regional Airport 
 ABJ - Abidjan : Cote D'ivoire Port Bouet 

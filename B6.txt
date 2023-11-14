@@ -1,0 +1,226 @@
+科目名: プログラミング実習III
+課題: B6
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年11月12日
+
+----------------------------------------
+
+[課題 6.1]
+結果：
+
+static list_node_t *insert_node(list_node_t *n, int val)
+/* n の指す節点の直後に, 値 val を保持する新しい節点を挿入し,
+  その節点へのポインタを返す */
+{
+
+    list_node_t *new_node = create_node(val);
+
+    /* ノード n (nの指す節点) の直後に挿入 (この部分を埋めよ) */
+    new_node->next = n->next;
+    n->next = new_node;
+
+    return new_node;
+}
+
+void list_print(list_node_t *head_p)
+/* リストの内容を表示する */
+{
+    list_node_t *p = head_p->next; // 헤드 노드 다음의 첫 번째 노드부터 시작
+
+    printf("[");
+    for (; p != NULL; p = p->next)
+    {
+        printf(" %d ", p->val);
+    }
+    printf("]");
+
+    printf("\n"); // 개행을 통해 출력을 마무리합니다.
+}
+
+
+
+input = 3
+[ 3 ]
+input = 5
+[ 5  3 ]
+input = 4
+[ 4  5  3 ]
+input = 3
+[ 3  4  5  3 ]
+input = %                                                                                                                                                          
+chosunghwa@joseonghwaui-MacBookAir 6-1 %
+
+
+感想：
+
+Insert_nodeを利用してリストの中に新しいノードを追加する方法を学ぶことができました。
+list_node_t *p = head_p->next
+head_p -> nextから始まらないと最初にhead_pを作った時のダミーデータから出力されるのもわかりました。
+
+----------------------------------------
+
+[課題 6.2]
+
+結果：
+
+list_node_t *list_find(list_node_t *head_p, int val)
+/* リスト中に値が val の節点を探す
+   見つかればその節点のポインタを, なければ NULL を返す */
+{
+    list_node_t *p = head_p->next;
+
+    for (; p != NULL; p = p->next)
+    {
+        if (p->val == val)
+        {
+            return p;
+            exit(0);
+        }
+    }
+    return NULL;
+}
+
+chosunghwa@joseonghwaui-MacBookAir 6-2 % ./a.out
+input = 3
+[ 3 ]
+input = 4
+[ 4  3 ]
+input = 5
+[ 5  4  3 ]
+input = 3
+[ 5  4  -3 ]
+input = 4
+[ 5  -4  -3 ]
+input = -4
+[ 5  4  -3 ]
+input = -3
+[ 5  4  3 ]
+input = %                                                                                                                                                          
+chosunghwa@joseonghwaui-MacBookAir 6-2 %
+
+感想：
+
+リストの中をfor文を使って入力した数字を探す方法を学ぶことができました。
+----------------------------------------
+[課題 6.3]
+
+結果：
+
+list_node_t *list_insert_uniq(list_node_t *n, int val)
+{
+    list_node_t *p = list_find(n, val);
+    if (p == NULL)
+    {
+        list_insert(n, val);
+    }
+    return p;
+}
+
+
+chosunghwa@joseonghwaui-MacBookAir 6-3 % ./a.out
+input = 3
+[ 3 ]
+input = 5
+[ 5  3 ]
+input = 3
+[ 5  3 ]
+input = 4
+[ 4  5  3 ]
+input = 4
+[ 4  5  3 ]
+input = %                                                                                                                                                          
+chosunghwa@joseonghwaui-MacBookAir 6-3 %
+
+感想：
+
+List_insert_uniqの中で先ほど作成したlist_insertを使って重複検査をする方法を真びました。
+
+----------------------------------------
+[課題 6.4]
+
+結果：
+chosunghwa@joseonghwaui-MacBookAir 6-4 % gcc list.c myrand.c list4time.c 
+chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+5000
+cpu = 0.104492 [sec]
+1個：0.0000209
+chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+10000
+cpu = 0.297431 [sec] 
+1個：0.00002974
+chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+15000
+cpu = 0.648859 [sec]
+1個：0.00004326
+chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+20000
+cpu = 1.05705 [sec]
+1個：0.00005285
+chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+25000
+cpu = 1.685 [sec]
+1個：0.0000674
+chosunghwa@joseonghwaui-MacBookAir 6-4 %
+
+感想：
+データ１個あたりに必要な平均計算時間の増加量
+5000 -> 10000 : 0.00000884
+10000 -> 15000 : 0.00001352	
+20000 -> 25000 : 0.00000959
+25000 -> 20000 : 0.00001455
+
+桁が変わらなければ直線的に増加するが桁が増加する場合データの増加本数が同じであっても大幅に増加する
+
+
+----------------------------------------
+[課題 6.5]
+
+結果：
+chosunghwa@joseonghwaui-MacBookAir 6-5 % gcc list.c list5test.c
+chosunghwa@joseonghwaui-MacBookAir 6-5 % ./a.out
+input = 3
+[ 3 ]
+input = 5
+[ 3  5 ]
+input = 3
+[ 5 ]
+input = 4
+[ 5  4 ]
+input = 4
+[ 5 ]
+input =
+
+感想：
+
+普通にremove(p)をしたら一番前のリストが削除してしまい
+その値を持つ節点の直前の節点を指すポインタ pを求めることで一番工夫しました
+
+
+
+----------------------------------------
+[課題 6.9]
+
+結果：
+
+chosunghwa@joseonghwaui-MacBookAir 6-9 % gcc tree.c tree9test.c
+chosunghwa@joseonghwaui-MacBookAir 6-9 % ./a.out
+input = 3
+[ 3 ]
+input = 5
+[ 3 5 ]
+input = 3
+[ 3 5 ]
+input = 4
+[ 3 4 5 ]
+input =
+
+感想：
+
+二分木探索のアルゴリズムに関して知ることができました。
+----------------------------------------
+
+[課題B6の感想]
+
+前回のポイントに加えてもっと難しいリスト処理に関して学び、リストというのを知ることができました。特にリスト処理を通じて二分木探索アルゴリズムに関して勉強ができたのが一番興味深いでした。
+

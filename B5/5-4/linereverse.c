@@ -1,24 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define MAX_LINES 1000
-#define MAX_LINE_LENGTH 128
+#define LINELEN 128
 
 int main(void)
 {
-    char lines[MAX_LINES + 1][MAX_LINE_LENGTH + 1];
+    char s[LINELEN + 1];
+    char *line[100]; // 適切な行数に設定する (この例では最大100行)
     int line_count = 0;
 
-    // ファイルから行を読み込む
-    while (fgets(lines[line_count], MAX_LINE_LENGTH, stdin) != NULL)
+    // 行ごとに文字列を読み込み、lineに格納する
+    while (fgets(s, LINELEN, stdin) != NULL)
     {
+        // 改行文字を削除してからコピー
+        s[strcspn(s, "\n")] = '\0';
+        line[line_count] = strdup(s);
+
+        if (line[line_count] == NULL)
+        {
+            fprintf(stderr, "Memory allocation error\n");
+            exit(EXIT_FAILURE);
+        }
+
         line_count++;
     }
 
-    // 行を逆順に出力
+    // 逆順に出力
     for (int i = line_count - 1; i >= 0; i--)
     {
-        printf("%s", lines[i]);
+        printf("%s\n", line[i]);
+    }
+
+    // メモリの解放
+    for (int i = 0; i < line_count; i++)
+    {
+        free(line[i]);
     }
 
     return 0;
