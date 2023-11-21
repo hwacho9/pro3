@@ -1,0 +1,289 @@
+科目名: プログラミング実習III
+課題: B７
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年11月18日
+
+----------------------------------------
+
+[課題 7.1]
+
+結果：
+
+chosunghwa@joseonghwaui-MacBookAir 7-1 % ./a.out
+n = 5
+[0] : 6
+[1] : 2
+[2] : 4
+[3] : 9
+[4] : 8
+[0]    6.00000
+[1]    2.00000
+[2]    4.00000
+[3]    9.00000
+[4]    8.00000
+k = 0
+swapmin(n, a, 0)
+[0]    2.00000
+[1]    6.00000
+[2]    4.00000
+[3]    9.00000
+[4]    8.00000
+k = 1
+swapmin(n, a, 1)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    9.00000
+[4]    8.00000
+k = 2
+swapmin(n, a, 2)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    9.00000
+[4]    8.00000
+k = 3
+swapmin(n, a, 3)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    8.00000
+[4]    9.00000
+k =
+
+感想：
+
+----------------------------------------
+
+[課題 7.2]
+
+結果：
+
+chosunghwa@joseonghwaui-MacBookAir 7-2 % gcc sort_test.c selection_sort.c
+chosunghwa@joseonghwaui-MacBookAir 7-2 % ./a.out
+n = 5
+[0] : 1
+[1] : 2
+[2] : 3
+[3] : 4
+[4] : 5
+ 1.0 2.0 3.0 4.0 5.0
+n = 5   
+[0] : 5
+[1] : 4
+[2] : 3
+[3] : 2
+[4] : 1
+ 1.0 2.0 3.0 4.0 5.0
+n = 3
+[0] : 0.3
+[1] : 0.2
+[2] : 0.1
+ 0.1 0.2 0.3
+n = %                                                                                                                                                                   
+chosunghwa@joseonghwaui-MacBookAir 7-2 %
+
+chosunghwa@joseonghwaui-MacBookAir 7-2 % diff -w out.txt exp.txt
+chosunghwa@joseonghwaui-MacBookAir 7-2 %
+感想：
+----------------------------------------
+[課題 7.3]
+
+結果：
+
+chosunghwa@joseonghwaui-MacBookAir 7-3 % ./a.out
+n = 5
+[0] : 6
+[1] : 2
+[2] : 4
+[3] : 9
+[4] : 8
+[0]    6.00000
+[1]    2.00000
+[2]    4.00000
+[3]    9.00000
+[4]    8.00000
+k = 1
+insert(n, a, 1)
+[0]    2.00000
+[1]    6.00000
+[2]    4.00000
+[3]    9.00000
+[4]    8.00000
+k = 2
+insert(n, a, 2)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    9.00000
+[4]    8.00000
+k = 3
+insert(n, a, 3)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    9.00000
+[4]    8.00000
+k = 4
+insert(n, a, 4)
+[0]    2.00000
+[1]    4.00000
+[2]    6.00000
+[3]    8.00000
+[4]    9.00000
+k = %                                                                                                                                                                   
+chosunghwa@joseonghwaui-MacBookAir 7-3 %
+
+感想：
+
+
+----------------------------------------
+[課題 7.4]
+
+結果：
+
+chosunghwa@joseongcBookAir 7-4 % gcc sort_test.c insertion_sort.c
+chosunghwa@joseongcBookAir 7-4 % ./a.out
+n = 5
+[0] : 6
+[1] : 2
+[2] : 4
+[3] : 9
+[4] : 8
+ 2.0 4.0 6.0 8.0 9.0
+n =
+
+感想：
+
+
+----------------------------------------
+[課題 7.5]
+
+結果：
+
+chosunghwa@joseongcBookAir 7-6 % gcc sort_test.c quick_sort.c
+chosunghwa@joseongcBookAir 7-6 % ./a.out
+n = 65536
+Assertion failed: (0 < n && n <= MAX_N), function array_scan, file sort_test.c, line 18.
+zsh: abort      ./a.out
+chosunghwa@joseongcBookAir 7-6 % ./a.out
+n = 5
+[0] : 6
+[1] : 2
+[2] : 4
+[3] : 9
+[4] : 8
+ 2.0 4.0 6.0 8.0 9.0
+
+
+hosunghwa@joseongcBookAir 7-6 % gcc -O2 sort_cpu.c quick_sort.c    
+chosunghwa@joseongcBookAir 7-6 % ./a.out
+乱数
+       16807.00000
+   282475249.00000
+  1622650073.00000
+   984943658.00000
+  1144108930.00000
+   470211272.00000
+   101027544.00000
+  1457850878.00000
+n = 2
+cpu =    0.000003 [sec]
+n = 4
+cpu =    0.000000 [sec]
+n = 8
+cpu =    0.000001 [sec]
+正順
+           0.00000
+           1.00000
+           2.00000
+           3.00000
+           4.00000
+           5.00000
+           6.00000
+           7.00000
+n = 2
+cpu =    0.000000 [sec]
+n = 4
+cpu =    0.000001 [sec]
+n = 8
+cpu =    0.000001 [sec]
+逆順
+           7.00000
+           6.00000
+           5.00000
+           4.00000
+           3.00000
+           2.00000
+           1.00000
+           0.00000
+n = 2
+cpu =    0.000001 [sec]
+n = 4
+cpu =    0.000000 [sec]
+n = 8
+cpu =    0.000001 [sec]
+chosunghwa@joseongcBookAir 7-6 %
+
+感想：
+
+
+----------------------------------------
+[課題 7.6]
+
+結果：
+
+chosunghwa@joseongcBookAir B7 % cd 7-6
+chosunghwa@joseongcBookAir 7-6 % gcc sort_test.c quick_sort.c
+chosunghwa@joseongcBookAir 7-6 % ./a.out
+n = 65536
+Assertion failed: (0 < n && n <= MAX_N), function array_scan, file sort_test.c, line 18.
+zsh: abort      ./a.out
+chosunghwa@joseongcBookAir 7-6 % ./a.out
+n = 5
+[0] : 6
+[1] : 2
+[2] : 4
+[3] : 9
+[4] : 8
+ 2.0 4.0 6.0 8.0 9.0
+n = ^C
+
+感想：
+
+
+----------------------------------------
+[課題 7.7]
+
+結果：
+
+chosunghwa@joseongcBookAir 7-7 % gcc string_sort.c string_sort_test.c
+chosunghwa@joseongcBookAir 7-7 % ./a.out
+n = ^C
+chosunghwa@joseongcBookAir 7-7 % ./a.out < in.txt > out.txt
+n = [0] : [1] : [2] : [3] : [4] : %                                                                                                                              
+chosunghwa@joseongcBookAir 7-7 % diff -w exp.txt out.txt
+感想：
+
+
+----------------------------------------
+[課題 7.8]
+
+結果：
+chosunghwa@joseongcBookAir 7-8 % gcc str_sort.c str_sort_test.c
+chosunghwa@joseongcBookAir 7-8 % ./a.out
+n = %                                                                                                                                                            
+chosunghwa@joseongcBookAir 7-8 % ./a.out < in.txt > out.txt
+n = [0].name : [0].age : [0].height : [1].name : [1].age : [1].height : [2].name : [2].age : [2].height : [3].name : [3].age : [3].height : [4].name : [4].age : [4].height : [5].name : [5].age : [5].height : %                                                                                                                 
+chosunghwa@joseongcBookAir 7-8 % diff -w exp.txt out.txt       
+chosunghwa@joseongcBookAir 7-8 %
+
+感想：
+
+
+----------------------------------------
+
+[課題 B7 の感想]
+前回に続いてリスト処理に関して復習し、加えてソーティングに関し学習ができた授業でした。また、7-5のCPU最適化に関して勉強、実装する時が一番興味深いでした。
+
