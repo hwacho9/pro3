@@ -160,12 +160,12 @@ void db_dump(db_t *db)
     {
         printf("[%4d] ", i);
 
-        if (i < MAX_RECORDS)
+        if (i < db->n)
         {
-            printf("%s %s", db->record[i].key, (db->record[i].data != NULL) ? db->record[i].data : "");
+            printf("%s %s\n", db->record[i].key, (db->record[i].data != NULL) ? db->record[i].data : "");
         }
 
-        if (i != MAX_RECORDS - 1)
+        else if (i != MAX_RECORDS - 1)
         {
             printf("\n");
         }
@@ -248,6 +248,7 @@ void db_hash_load(db_t *db)
         {
             h = (h + 1) % MAX_RECORDS;
 
+            // Check for wrapping around to the beginning
             if (h == db_hash_f(key))
             {
                 fprintf(stderr, "Hash table is full\n");
