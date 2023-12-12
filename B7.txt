@@ -162,23 +162,8 @@ n =
 
 結果：
 
-chosunghwa@joseongcBookAir 7-6 % gcc sort_test.c quick_sort.c
-chosunghwa@joseongcBookAir 7-6 % ./a.out
-n = 65536
-Assertion failed: (0 < n && n <= MAX_N), function array_scan, file sort_test.c, line 18.
-zsh: abort      ./a.out
-chosunghwa@joseongcBookAir 7-6 % ./a.out
-n = 5
-[0] : 6
-[1] : 2
-[2] : 4
-[3] : 9
-[4] : 8
- 2.0 4.0 6.0 8.0 9.0
-
-
-hosunghwa@joseongcBookAir 7-6 % gcc -O2 sort_cpu.c quick_sort.c    
-chosunghwa@joseongcBookAir 7-6 % ./a.out
+chosunghwa@joseonghwaui-MacBookAir 7-5 % gcc selection_sort.c sort_cpu.c 
+chosunghwa@joseonghwaui-MacBookAir 7-5 % ./a.out
 乱数
        16807.00000
    282475249.00000
@@ -188,12 +173,20 @@ chosunghwa@joseongcBookAir 7-6 % ./a.out
    470211272.00000
    101027544.00000
   1457850878.00000
-n = 2
-cpu =    0.000003 [sec]
-n = 4
-cpu =    0.000000 [sec]
-n = 8
-cpu =    0.000001 [sec]
+n = 1024
+cpu =    0.002196 [sec]
+n = 2048
+cpu =    0.008062 [sec]
+n = 4096
+cpu =    0.024055 [sec]
+n = 8192
+cpu =    0.056967 [sec]
+n = 16384
+cpu =    0.170223 [sec]
+n = 32768
+cpu =    0.680871 [sec]
+n = 65536
+cpu =    2.753326 [sec]
 正順
            0.00000
            1.00000
@@ -203,30 +196,200 @@ cpu =    0.000001 [sec]
            5.00000
            6.00000
            7.00000
-n = 2
-cpu =    0.000000 [sec]
-n = 4
-cpu =    0.000001 [sec]
-n = 8
-cpu =    0.000001 [sec]
+n = 1024
+cpu =    0.000671 [sec]
+n = 2048
+cpu =    0.002670 [sec]
+n = 4096
+cpu =    0.010566 [sec]
+n = 8192
+cpu =    0.042675 [sec]
+n = 16384
+cpu =    0.168986 [sec]
+n = 32768
+cpu =    0.675149 [sec]
+n = 65536
+cpu =    2.712387 [sec]
 逆順
-           7.00000
-           6.00000
-           5.00000
-           4.00000
-           3.00000
-           2.00000
-           1.00000
-           0.00000
-n = 2
-cpu =    0.000001 [sec]
-n = 4
-cpu =    0.000000 [sec]
-n = 8
-cpu =    0.000001 [sec]
-chosunghwa@joseongcBookAir 7-6 %
+       65535.00000
+       65534.00000
+       65533.00000
+       65532.00000
+       65531.00000
+       65530.00000
+       65529.00000
+       65528.00000
+n = 1024
+cpu =    0.000761 [sec]
+n = 2048
+cpu =    0.002984 [sec]
+n = 4096
+cpu =    0.011941 [sec]
+n = 8192
+cpu =    0.048283 [sec]
+n = 16384
+cpu =    0.191477 [sec]
+n = 32768
+cpu =    0.757832 [sec]
+n = 65536
+cpu =    3.061792 [sec]
+chosunghwa@joseonghwaui-MacBookAir 7-5 %
 
-感想：
+chosunghwa@joseonghwaui-MacBookAir 7-5 % gcc -O2 sort_cpu.c selection_sort.c 
+chosunghwa@joseonghwaui-MacBookAir 7-5 % ./a.out
+乱数
+       16807.00000
+   282475249.00000
+  1622650073.00000
+   984943658.00000
+  1144108930.00000
+   470211272.00000
+   101027544.00000
+  1457850878.00000
+n = 1024
+cpu =    0.001941 [sec]
+n = 2048
+cpu =    0.018368 [sec]
+n = 4096
+cpu =    0.049780 [sec]
+n = 8192
+cpu =    0.120004 [sec]
+n = 16384
+cpu =    0.468012 [sec]
+n = 32768
+cpu =    1.848559 [sec]
+n = 65536
+cpu =    7.423799 [sec]
+正順
+           0.00000
+           1.00000
+           2.00000
+           3.00000
+           4.00000
+           5.00000
+           6.00000
+           7.00000
+n = 1024
+cpu =    0.001764 [sec]
+n = 2048
+cpu =    0.007267 [sec]
+n = 4096
+cpu =    0.029758 [sec]
+n = 8192
+cpu =    0.120218 [sec]
+n = 16384
+cpu =    0.470440 [sec]
+n = 32768
+cpu =    1.852288 [sec]
+n = 65536
+cpu =    7.382035 [sec]
+逆順
+       65535.00000
+       65534.00000
+       65533.00000
+       65532.00000
+       65531.00000
+       65530.00000
+       65529.00000
+       65528.00000
+n = 1024
+cpu =    0.001696 [sec]
+n = 2048
+cpu =    0.007043 [sec]
+n = 4096
+cpu =    0.028973 [sec]
+n = 8192
+cpu =    0.114823 [sec]
+n = 16384
+cpu =    0.460036 [sec]
+n = 32768
+cpu =    1.843463 [sec]
+n = 65536
+cpu =    7.377457 [sec]
+chosunghwa@joseonghwaui-MacBookAir 7-5 %
+       
+chosunghwa@joseonghwaui-MacBookAir 7-5 % gcc -O2 sort_cpu.c insertion_sort.c 
+chosunghwa@joseonghwaui-MacBookAir 7-5 % ./a.out
+乱数
+       16807.00000
+   282475249.00000
+  1622650073.00000
+   984943658.00000
+  1144108930.00000
+   470211272.00000
+   101027544.00000
+  1457850878.00000
+n = 1024
+cpu =    0.000896 [sec]
+n = 2048
+cpu =    0.003159 [sec]
+n = 4096
+cpu =    0.010745 [sec]
+n = 8192
+cpu =    0.031179 [sec]
+n = 16384
+cpu =    0.088383 [sec]
+n = 32768
+cpu =    0.905145 [sec]
+n = 65536
+cpu =    4.603005 [sec]
+正順
+           0.00000
+           1.00000
+           2.00000
+           3.00000
+           4.00000
+           5.00000
+           6.00000
+           7.00000
+n = 1024
+cpu =    0.000192 [sec]
+n = 2048
+cpu =    0.000707 [sec]
+n = 4096
+cpu =    0.002788 [sec]
+n = 8192
+cpu =    0.010880 [sec]
+n = 16384
+cpu =    0.043825 [sec]
+n = 32768
+cpu =    0.171604 [sec]
+n = 65536
+cpu =    0.675348 [sec]
+逆順
+       65535.00000
+       65534.00000
+       65533.00000
+       65532.00000
+       65531.00000
+       65530.00000
+       65529.00000
+       65528.00000
+n = 1024
+cpu =    0.000182 [sec]
+n = 2048
+cpu =    0.000691 [sec]
+n = 4096
+cpu =    0.002683 [sec]
+n = 8192
+cpu =    0.010939 [sec]
+n = 16384
+cpu =    0.042592 [sec]
+n = 32768
+cpu =    0.171122 [sec]
+n = 65536
+cpu =    0.687262 [sec]
+chosunghwa@joseonghwaui-MacBookAir 7-5 %
+
+
+
+感想・考察：
+最適化した場合はすべての場合によって早くなりました。特に、Nの値が大きいほど実行時間がもっと早くなリました。
+初期データが乱数, 正順, 逆順の場合の計算時間はほぼ同じでした。
+Nの増加に対してnの値が大きいほど大きな割合で計算時間が増えました。
+
+Insertion_sortも同じく最適化するとほぼ１０倍以上計算時間が早くなりました。
+乱数の場合より、正順, 逆順の方がより短い計算時間を持ち、正順, 逆順はほぼ同じでした。また、nの値が大きいほど大きい割合で計算時間が増えました
 
 
 ----------------------------------------

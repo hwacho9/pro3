@@ -11,7 +11,7 @@ int main(void)
 {
   int *a = NULL;
   double *b = NULL;
-  int i; 
+  int i;
 
   a = create_iarray_n_d(NI, 23); /* 呼び出し */
   for (i = 0; i < NI; i++)

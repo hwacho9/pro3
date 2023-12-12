@@ -32,22 +32,20 @@ static list_node_t *insert_node(list_node_t *n, int val)
     new_node->next = n->next;
     n->next = new_node;
 
-    return new_node; // 挿入した節点へのポインタを返す
+    return new_node;
 }
 
 void list_print(list_node_t *head_p)
 /* リストの内容を表示する */
 {
-    list_node_t *p = head_p->next; // 헤드 노드 다음의 첫 번째 노드부터 시작
+    list_node_t *p;
 
-    printf("[");
-    for (; p != NULL; p = p->next)
+    printf("[ ");
+    for (p = head_p->next; p != NULL; p = p->next)
     {
-        printf(" %d ", p->val);
+        printf("%d ", p->val);
     }
-    printf("]");
-
-    printf("\n"); // 개행을 통해 출력을 마무리합니다.
+    printf("]\n");
 }
 
 static void remove_node(list_node_t *p)
@@ -75,64 +73,49 @@ list_node_t *list_find(list_node_t *head_p, int val)
 /* リスト中に値が val の節点を探す
    見つかればその節点のポインタを, なければ NULL を返す */
 {
-    list_node_t *p = head_p->next;
+    list_node_t *p;
 
-    for (; p != NULL; p = p->next)
+    for (p = head_p->next; p != NULL; p = p->next)
     {
         if (p->val == val)
         {
             return p;
-            p = p->next;
         }
     }
+
     return NULL;
 }
 
-list_node_t *list_insert_uniq(list_node_t *n, int val)
+list_node_t *list_insert_uniq(list_node_t *head_p, int val)
 {
-    list_node_t *p = list_find(n, val);
+    list_node_t *p = list_find(head_p, val);
     if (p == NULL)
     {
-        list_insert(n, val);
+        return insert_node(head_p, val);
     }
-    return p;
+    else
+    {
+        return p;
+    }
 }
 
 list_node_t *list_insert_delete_dup(list_node_t *head_p, int val)
 {
-    // list_node_t *p = list_find(head_p, val);
-    // if (p == NULL)
-    // {
-    //     list_insert(p, val);
-    //     return p;
-    // }
-    // else
-    // {
-    //     free(p->next);
-    // }
-    // return NULL;
-
-    list_node_t *p_prev = head_p;
-    list_node_t *p = head_p->next;
-
-    while (p != NULL && p->val != val)
-    {
-        p_prev = p;
-        p = p->next;
-    }
-
+    list_node_t *p = list_find(head_p, val);
     if (p == NULL)
     {
-        // 同じ値を持つ節点がない場合、新しい節点を挿入
-        list_insert(p_prev, val);
+        return insert_node(head_p, val);
     }
     else
     {
-        // 同じ値を持つ節点がある場合、その節点を削除
-        remove_node(p_prev);
+        list_node_t *prev = head_p;
+        while (prev->next != p)
+        {
+            prev = prev->next;
+        }
+        remove_node(prev);
+        return NULL;
     }
-
-    return p;
 }
 
 // list_node_t *list_insert_delete_dup2(list_node_t *head_p, int val)

@@ -3,8 +3,8 @@
 #include <time.h>
 #include <assert.h>
 
-#define MIN_N 2
-#define MAX_N 8
+#define MIN_N 1024
+#define MAX_N 65536
 #define N_TEST 8
 
 void sort(int n, double *a);

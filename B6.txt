@@ -139,38 +139,36 @@ List_insert_uniqの中で先ほど作成したlist_insertを使って重複検�
 ----------------------------------------
 [課題 6.4]
 
-結果：
-chosunghwa@joseonghwaui-MacBookAir 6-4 % gcc list.c myrand.c list4time.c 
+hosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
+ n: 5000
+(1) cpu = 0.037608 [sec]
+(2) cpu = 0.025475 [sec]
+(3) cpu = 0.01964 [sec]
 chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
-5000
-cpu = 0.104492 [sec]
-1個：0.0000209
+ n: 10000
+(1) cpu = 0.104627 [sec]
+(2) cpu = 0.064973 [sec]
+(3) cpu = 0.06486 [sec]
 chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
-10000
-cpu = 0.297431 [sec] 
-1個：0.00002974
+ n: 15000
+(1) cpu = 0.180666 [sec]
+(2) cpu = 0.144198 [sec]
+(3) cpu = 0.144145 [sec]
 chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
-15000
-cpu = 0.648859 [sec]
-1個：0.00004326
+ n: 20000
+(1) cpu = 0.311885 [sec]
+(2) cpu = 0.255846 [sec]
+(3) cpu = 0.255473 [sec]
 chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
-20000
-cpu = 1.05705 [sec]
-1個：0.00005285
-chosunghwa@joseonghwaui-MacBookAir 6-4 % ./a.out
-25000
-cpu = 1.685 [sec]
-1個：0.0000674
+ n: 25000
+(1) cpu = 0.435129 [sec]
+(2) cpu = 0.39849 [sec]
+(3) cpu = 0.396034 [sec]
 chosunghwa@joseonghwaui-MacBookAir 6-4 %
 
 感想：
-データ１個あたりに必要な平均計算時間の増加量
-5000 -> 10000 : 0.00000884
-10000 -> 15000 : 0.00001352	
-20000 -> 25000 : 0.00000959
-25000 -> 20000 : 0.00001455
-
-桁が変わらなければ直線的に増加するが桁が増加する場合データの増加本数が同じであっても大幅に増加する
+（２）、（３）と見ればわかるように乱数が異なる乱数でもかかる時間がほぼ一緒だと思われ、乱数と計算時間とは関係性が低いと考えられました。
+また、リストに新しいデータを挿入する際、全体を走査して重複がないか確認するため、リストが長くなればなるほど挿入に時間がかかると思います。
 
 
 ----------------------------------------

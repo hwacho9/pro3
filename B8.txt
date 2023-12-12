@@ -1,0 +1,118 @@
+科目名: プログラミング実習III
+課題: B2
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年 11月26日
+
+
+----------------------------------------
+[課題 8.3]
+
+結果：	
+chosunghwa@joseonghwaui-MacBookAir 8-1 % gcc iata_db.c iata_cpu1.c
+key =AAC  cpu =  0.001484 [sec]
+key =CXI  cpu =  0.163828 [sec]
+key =IYK  cpu =  0.244010 [sec]
+key =MVD  cpu =  0.364459 [sec]
+key =SJW  cpu =  0.456361 [sec]
+key =YFB  cpu =  0.557032 [sec]
+key =ZYL  cpu =  0.599123 [sec]
+key =AAA  cpu =  1.346398 [sec]
+key =LLL  cpu =  1.343692 [sec]
+key =ZZZ  cpu =  1.323140 [sec]
+               
+
+chosunghwa@joseonghwaui-MacBookAir 8-1 % gcc -O2 iata_db.c iata_cpu1.c
+chosunghwa@joseonghwaui-MacBookAir 8-1 % ./a.out < in.txt > out.txt   
+key = AAC cpu =  0.001331 [sec]
+key = CXI cpu =  0.116684 [sec]
+key = IYK cpu =  0.141713 [sec]
+key = MVD cpu =  0.217022 [sec]
+key = SJW cpu =  0.268297 [sec]
+key = YFB cpu =  0.323077 [sec]
+key = ZYL cpu =  0.347076 [sec]
+key = AAA cpu =  0.782194 [sec]
+key = LLL cpu =  0.776850 [sec]
+key = ZZZ cpu =  0.758186 [sec]
+
+
+key = %                      
+感想：データが後ろにあるほど検索に要する時間が増えていく、存在しないデータを探索するときはデータの名前と関係なくほぼ同じくらいの時間が要することがわかる。
+最適化オプションをすると要する時間が減ったのを知ることができる。
+
+----------------------------------------
+[課題 8.5]
+
+結果：
+
+
+key = AAC cpu =  0.015177 [sec]
+key = CXI cpu =  0.010115 [sec]
+key = IYK cpu =  0.011586 [sec]
+key = MVD cpu =  0.010486 [sec]
+key = SJW cpu =  0.007931 [sec]
+key = YFB cpu =  0.007984 [sec]
+key = ZYL cpu =  0.007232 [sec]
+key = AAA cpu =  0.007642 [sec]
+key = LLL cpu =  0.008317 [sec]
+key = ZZZ cpu =  0.006906 [sec]
+
+chosunghwa@joseongcBookAir 8-4 % gcc -O2 iata_cpu2.c iata_db.c
+chosunghwa@joseongcBookAir 8-4 % ./a.out < in.txt > out.txt   
+key = cpu =  0.012025 [sec]
+key = cpu =  0.007276 [sec]
+key = cpu =  0.009387 [sec]
+key = cpu =  0.007962 [sec]
+key = cpu =  0.006864 [sec]
+key = cpu =  0.006742 [sec]
+key = cpu =  0.006415 [sec]
+key = cpu =  0.005956 [sec]
+key = cpu =  0.006345 [sec]
+key = cpu =  0.005420 [sec]
+
+感想：
+線形探索に比べて先頭のデータの速度はほぼ同じだけど全体的に要する時間が減ったのをわかることができる。しかしデータの順番と探索速度の関係性はないと予想される。
+これによって、全体的に効率よく探索するとき二分木探索が有効だと考えられる。
+
+----------------------------------------
+[課題 8.7]
+
+結果：
+
+key = AAC cpu =  1.659947 [sec]
+key = CXI cpu =  0.000794 [sec]
+key = IYK cpu =  0.000790 [sec]
+key = MVD cpu =  0.330425 [sec]
+key = SJW cpu =  0.760713 [sec]
+key = YFB cpu =  1.066654 [sec]
+key = ZYL cpu =  0.199329 [sec]
+key = AAA cpu =  1.624959 [sec]
+key = LLL cpu =  0.000791 [sec]
+key = ZZZ cpu =  0.168873 [sec]
+
+
+chosunghwa@joseongcBookAir 8-6 % gcc -O2 iata_cpu3.c iata_db.c
+chosunghwa@joseongcBookAir 8-6 % ./a.out < in.txt > out.txt
+key = AAC cpu =  0.974493 [sec]
+key = CXI cpu =  0.000292 [sec]
+key = IYK cpu =  0.000290 [sec]
+key = MVD cpu =  0.192393 [sec]
+key = SJW cpu =  0.442963 [sec]
+key = YFB cpu =  0.620620 [sec]
+key = ZYL cpu =  0.115347 [sec]
+key = AAA cpu =  0.949208 [sec]
+key = LLL cpu =  0.000296 [sec]
+key = ZZZ cpu =  0.097964 [sec]
+
+感想：
+線形探索と二分木探索に比べて探索速度が速いデータもあるが、むしろ遅いデータもあるのがわかる。そして存在しないデータを探索する時もデータの名前、順番と関係性がわからにことがわかる。
+これによって、特定の情報を探索するとき効率がいいのをわかることができる。
+
+
+----------------------------------------
+
+[課題 B8 の感想]
+
+線形探索、二分木探索、ハッシュ法に関してわかることができ、かくアルゴリズムを作成することができるようになりました。
+特に、データの順番とアルゴリズムによる探索速度の関係性をわかるようになりました。
+

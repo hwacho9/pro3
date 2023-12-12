@@ -14,7 +14,7 @@ int main(void)
     while (fgets(s, LINELEN, stdin) != NULL)
     {
         // 改行文字を削除してからコピー
-        s[strcspn(s, "\n")] = '\0';
+        // s[strcspn(s, "\n")] = '\0';
         line[line_count] = strdup(s);
 
         if (line[line_count] == NULL)
