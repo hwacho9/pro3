@@ -32,11 +32,15 @@ int main(void)
 
     for (int i = 0; i < n; i++)
     {
-        // 電話番号"079-xxx-xxxx"を"xxx-xxxx"にする
-        size_t hyphenPos = e[i].phone.find('-');
-        if (hyphenPos != std::string::npos)
+        // Check if the phone number starts with "079" (excluding "0798")
+        if (e[i].phone.find("079") == 0 && e[i].phone.find("0798") != 0)
         {
-            e[i].phone.erase(0, hyphenPos + 1);
+            // 電話番号"079-xxx-xxxx"を"xxx-xxxx"にする
+            size_t hyphenPos = e[i].phone.find('-');
+            if (hyphenPos != std::string::npos)
+            {
+                e[i].phone.erase(0, hyphenPos + 1);
+            }
         }
 
         // 出力

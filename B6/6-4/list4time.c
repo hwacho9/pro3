@@ -39,7 +39,6 @@ int main(void)
     printf("(2) cpu = %g [sec]\n", (double)(clk_end - clk_start) / CLOCKS_PER_SEC);
 
     // 処理(3): (1)と異なる乱数を n 個発生させ、list_find でそのデータをリスト中に検索する
-    myrand_init();
     clk_start = clock();
     for (int i = 0; i < n; i++)
     {

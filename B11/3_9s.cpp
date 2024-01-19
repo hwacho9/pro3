@@ -92,10 +92,8 @@ int main(void)
     s1.push(3);
     s1.push(5);
 
-    // Using the copy constructor to create a copy of s1
     stack s2(s1);
 
-    // Dumping both stacks to verify the copy
     s1.dump(std::cout);
     s2.dump(std::cout);
 

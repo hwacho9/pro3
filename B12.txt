@@ -1,0 +1,251 @@
+科目名: プログラミング実習III
+課題: B2
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年10月08日
+
+----------------------------------------
+
+[課題 13.1]
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_1.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
+Skyline  3  5.51471  58000
+Civic  5  5.53488  39500
+Prius 5 8.89655 0
+chosunghwa@joseongcBookAir B12 %
+
+感想：
+Hybrid_carを作成する時、追加する部分だけ宣言していいのが興味深いでした
+
+----------------------------------------
+
+[課題 13.2]
+
+結果：
+chosunghwa@joseongcBookAir B12 % ./a.out
+Skyline  3  5.51471  58000
+Civic  5  5.53488  39500
+Prius 5 8.89655 17250
+
+感想：
+基底クラスの関数を呼び出す方法を学ぶことができました。
+----------------------------------------
+[課題 13.3]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_3.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
+car constructor: Skyline
+car constructor: Civic
+car constructor: Prius
+hybrid_car constructor: Prius
+Skyline  3  5.51471  58000
+Civic  5  5.53488  39500
+Prius 5 8.89655 0
+hybrid_car destructor: Prius
+car destructor: Prius
+car destructor: Civic
+car destructor: Skyline
+chosunghwa@joseongcBookAir B12 %
+
+感想：
+
+1.	carオブジェクト a のコンストラクタが呼び出す、
+2.	carオブジェクト b のコンストラクタが呼び出す、
+3.	hybrid_carオブジェクト h のコンストラクタが呼び出され、その後デストラクタが呼び出されます。
+4.	car b, cデストラクタ
+
+----------------------------------------
+[課題 13.4]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_4.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
+Stack size: 3
+Push count: 4
+Pop count: 1
+chosunghwa@joseongcBookAir B12 %
+
+感想：
+クラスの機能拡張をすることおいうのが便利だと感じました。
+
+----------------------------------------
+[課題 13.5]
+
+結果：
+
+chosunghwa@joseongcBookAir B12 % g++ 4_5.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
++--------------------+
+|  X              X  |
+| XXX   XXXXXX       |
+|XXXXX  XXXXXX  X    |
+| XXX          XXX   |
+|  X          XXXXX  |
+|            XXXXXXX |
+|           XXXXXXXXX|
+|  XXX       XXXXXXXX|
+|  XXX        XXXXX  |
+|X             XXX   |
++--------------------+
++--------------------+
+|    XXXXX  XXXXXX  X|
+|     XXX          XX|
+|      X          XXX|
+|                XXXX|
+|               XXXXX|
+|      XXX       XXXX|
+|      XXX        XXX|
+|    X             XX|
+|                   X|
+|                    |
++--------------------+
+chosunghwa@joseongcBookAir B12 %
+
+感想：
+
+
+
+
+----------------------------------------
+[課題 13.6]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_6.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
++--------------------+
+|  X              X  |
+| XXX   XXXXXX       |
+|XXXXX  XXXXXX  X    |
+| XXX          XXX   |
+|  X          XXXXX  |
+|            XXXXXXX |
+|           XXXXXXXXX|
+|  XXX       XXXXXXXX|
+|  XXX        XXXXX  |
+|X             XXX   |
++--------------------+
++--------------------+
+|    XXXXX  XXXXXX  X|
+|     XXX          XX|
+|      X          XXX|
+|                XXXX|
+|               XXXXX|
+|      XXX       XXXX|
+|      XXX        XXX|
+|    X             XX|
+|                   X|
+|                    |
++--------------------+
+chosunghwa@joseongcBookAir B12 %
+感想：
+
+
+----------------------------------------
+[課題 13.7]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_7.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
++--------------------+
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
++--------------------+
++--------------------+
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
+|                    |
++--------------------+
+chosunghwa@joseongcBookAir B12 %
+
+感想：
+
+
+----------------------------------------
+[課題 13.8]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_8.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
++--------------------+
+|  X              X  |
+| XXX   XXXXXX       |
+|XXXXX  XXXXXX  X    |
+| XXX          XXX   |
+|  X          XXXXX  |
+|            XXXXXXX |
+|           XXXXXXXXX|
+|  XXX       XXXXXXXX|
+|  XXX        XXXXX  |
+|X             XXX   |
++--------------------+
++--------------------+
+|    XXXXX  XXXXXX  X|
+|     XXX          XX|
+|      X          XXX|
+|                XXXX|
+|               XXXXX|
+|      XXX       XXXX|
+|      XXX        XXX|
+|    X             XX|
+|                   X|
+|                    |
++--------------------+
+chosunghwa@joseongcBookAir B12 %
+感想：
+
+
+----------------------------------------
+[課題 13.9]
+
+結果：
+chosunghwa@joseongcBookAir B12 % g++ 4_9.cpp
+chosunghwa@joseongcBookAir B12 % ./a.out
++--------------------+
+|  X              X  |
+| XXX   XXXXXX       |
+|XXXXX  XXXXXX  X    |
+| XXX          XXX   |
+|  X          XXXXX  |
+|            XXXXXXX |
+|           XXXXXXXXX|
+|  XXX       XXXXXXXX|
+|  XXX        XXXXX  |
+|X             XXX   |
++--------------------+
++--------------------+
+|    XXXXX  XXXXXX  X|
+|     XXX          XX|
+|      X          XXX|
+|                XXXX|
+|               XXXXX|
+|      XXX       XXXX|
+|      XXX        XXX|
+|    X             XX|
+|                   X|
+|                    |
++--------------------+
+chosunghwa@joseongcBookAir B12 %
+
+----------------------------------------
+
+[課題 B12 の感想]
+
+継承ということをわかるようになりました。また、同じ部分を繰り返して書く必要がないことが楽で、コードの可読性が良くなったと感じました。
+

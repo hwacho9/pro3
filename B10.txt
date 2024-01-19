@@ -1,0 +1,167 @@
+科目名: プログラミング実習III
+課題: B10
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年12月17日
+
+----------------------------------------
+
+[課題 6.1]
+
+結果：
+chosunghwa@joseongcBookAir B10 % g++ 2_1.cpp
+^[[A%                                                                                                                                                     
+chosunghwa@joseongcBookAir B10 % ./a.out    
+Kwansei Gakuin University (PR): 54-6017
+Kwansei Gakuin University (KSC): 565-7600
+Kobe University: 881-1212
+Sanda Woodytown SATY: 564-8800
+Sanda Hotel: 564-1101
+
+検索用文字列を入力してください:  Kwansei
+Kwansei Gakuin University (PR): 54-6017
+Kwansei Gakuin University (KSC): 565-7600
+chosunghwa@joseongcBookAir B10 % 
+
+感想：
+string型データ文字列長,部分文字列,置換に関して学ぶことができました。
+----------------------------------------
+
+[課題 6.2]
+
+結果：
+
+chosunghwa@joseongcBookAir B10 % g++ 2_2.cpp
+chosunghwa@joseongcBookAir B10 % ./a.out  
+Kwansei Gakuin University (PR): 54-6017
+Kwansei Gakuin University (KSC): 565-7600
+Kobe University: 881-1212
+Sanda Woodytown SATY: 564-8800
+Sanda Hotel: 564-1101
+
+検索用文字列を入力してください: Sanda
+Sanda Woodytown SATY: 564-8800
+Sanda Hotel: 564-1101
+chosunghwa@joseongcBookAir B10 %
+
+感想：
+Vectorという可変配列を使ってデータを管理する方法C++で実装することを学ぶことができました。
+
+----------------------------------------
+[課題 6.3]
+
+結果：
+
+chosunghwa@joseongcBookAir B10 % g++ 2_3.cpp
+chosunghwa@joseongcBookAir B10 % ./a.out  
+*** 成績簿 ***
+[7001] aaaa : 89
+[7013] cccc : 55
+[7087] eeee : 83
+[7123] bbbb : 70
+[7200] dddd : 99
+> 7001
+[7001] aaaa : 89
+> 7013
+[7013] cccc : 55
+> 7087
+[7087] eeee : 83
+> 7123
+[7123] bbbb : 70
+> 7200
+[7200] dddd : 99
+> 0
+Erased: [7013] cccc : 55
+*** 成績簿 ***
+[7001] aaaa : 89
+[7087] eeee : 83
+[7123] bbbb : 70
+[7200] dddd : 99
+
+chosunghwa@joseongcBookAir B10 %
+
+感想：
+C++ではlistがどんな方法で動くか、何が違うかに関して学ぶことができました。
+
+----------------------------------------
+[課題 6.4]
+
+結果：
+
+chosunghwa@joseongcBookAir B10 % g++ 2_4.cpp
+chosunghwa@joseongcBookAir B10 % ./a.out    
+Kobe University: 881-1212
+Kwansei Gakuin University (KSC): 565-7600
+Kwansei Gakuin University (PR): 54-6017
+Sanda Hotel: 564-1101
+Sanda Woodytown SATY: 564-8800
+
+検索用文字列を入力してください: Sanda 
+Result : Sanda Hotel: 1101
+Result : Sanda Woodytown SATY: 8800
+chosunghwa@joseongcBookAir B10 %
+
+感想：
+
+Vectorとは違うmapというデータ構造を学ぶことができました、そすてmapというデータ構造を初めて使ってみたので興味深いでした。
+
+
+----------------------------------------
+[課題 6.5]
+
+結果：
+chosunghwa@joseongcBookAir B10 % g++ 2_5.cpp
+chosunghwa@joseongcBookAir B10 % ./a.out
+>3
+3 found
+3 found again
+chosunghwa@joseongcBookAir B10 % ./a.out
+>5
+5 found
+not found
+chosunghwa@joseongcBookAir B10 % ./a.out
+>2
+2 found
+2 found again
+chosunghwa@joseongcBookAir B10 % ./a.out
+>6
+not found
+chosunghwa@joseongcBookAir B10 %
+
+感想：
+
+コンテナを学びそれをvectorを利用して実装したことで、コンテナの勉強はもちろん、vectorの復習もできました。
+
+----------------------------------------
+[課題 6.6]
+
+結果：
+
+chosunghwa@joseongcBookAir B10 % g++ 2_6.cpp
+chosunghwa@joseongcBookAir B10 % ./a.out    
+名前順にソート:
+Kobe University: 881-1212
+Kwansei Gakuin University (KSC): 565-7600
+Kwansei Gakuin University (PR): 54-6017
+Sanda Hotel: 564-1101
+Sanda Woodytown SATY: 564-8800
+
+電話番号順にソート:
+Kwansei Gakuin University (PR): 54-6017
+Sanda Hotel: 564-1101
+Sanda Woodytown SATY: 564-8800
+Kwansei Gakuin University (KSC): 565-7600
+Kobe University: 881-1212
+chosunghwa@joseongcBookAir B10 %
+
+感想：
+#include <algorithm>を使って昇順ソート、降順ソートをすることを学ぶことができました。
+
+----------------------------------------
+
+
+
+[課題 B10 の感想]
+
+
+C++の標準ライブラリで string, vector, list, map, algorithmに関して学ぶことができる授業でした、Cとは違ってC++でソートを実装する時algorithmクラスを使ったら簡単にできることが面白いでした。また、mapとデータ構造がpythonのdictionaryと似ているのをわかり興味深いでした。

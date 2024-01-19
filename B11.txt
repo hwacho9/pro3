@@ -1,0 +1,254 @@
+科目名: プログラミング実習III
+課題: B11
+番号: 27020856
+氏名: 趙 聖化
+作成: 2023年10月08日
+
+----------------------------------------
+
+[課題 11.1]
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_1.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+aaa()  //単体aaa宣言
+bbb() //配列 bbb宣言
+bbb()
+bbb()
+aaa()	//動的割当
+aaa(3,4) //class aの中のaaa(int xx, int yy)
+~aaa() //デストラクション
+aaa(7,4) //aaa x(7,4)を３回宣言、コンストラクタ、デストラクタ３回起動
+~aaa()
+aaa(7,4)
+~aaa()
+aaa(7,4)
+~aaa()
+~aaa()// *p デストラクタ
+aaa() //ccc宣言
+bbb() //ccc宣言
+ccc() //ccc宣言
+~ccc() //cccデストラクタ
+~bbb()//cccデストラクタ
+~aaa()//cccデストラクタ
+~bbb() //配列bbbデストラクタ
+~bbb()
+~bbb()
+~aaa() //単体aデストラクタ
+chosunghwa@joseongcBookAir B11 %
+----------------------------------------
+
+[課題 11.2]
+
+結果：
+予想：main begin
+for~loop begin
+add begin
+add end
+for~loop end 
+3回繰り返される
+最後にmain end
+
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_2.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+main begin
+for~loop begin
+add begin
+add end
+for~loop end
+for~loop begin
+add begin
+add end
+for~loop end
+for~loop begin
+add begin
+add end
+for~loop end
+main end
+
+感想：
+
+予想と結果が一致しました、しかしa+bをreturnする理由がよくわからないです。
+----------------------------------------
+[課題 11.3]
+
+Complex &operator=(const Complex &c)
+    {
+        real = c.real;
+        imag = c.imag;
+        return *this;
+    }
+
+    // Addition assignment operator
+    Complex &operator+=(const Complex &c)
+    {
+        real += c.real;
+        imag += c.imag;
+        return *this;
+    }
+
+
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_3.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out    
+Initial values:
+1+2i
+2.22+3.14i
+4.23+9.99i
+5+0i
+
+After assignment and addition:
+2.22+3.14i
+2.22+3.14i
+6.45+13.13i
+5+0i
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+代入演算,および左辺に右辺の値を足し込む演算+=を定義することをできるようになりました。
+
+----------------------------------------
+[課題 11.4]
+
+結果：
+
+chosunghwa@joseongcBookAir B11 % g++ 3_4.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+max=5, sp=3, data=(1 300 500 )
+max=5, sp=3, data=(1 300 500 )
+a.out(65618,0x1e0ae9ec0) malloc: Double free of object 0x15be05fe0
+a.out(65618,0x1e0ae9ec0) malloc: *** set a breakpoint in malloc_error_break to debug
+zsh: abort      ./a.out
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+テキストようにとなったり,「既にfreeされているデータに対してfreeを行った」というようなエラーメッセージが出力されるなど致命的なエラーが発生する
+----------------------------------------
+[課題 11.5]
+
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_4.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out    
+max=5, sp=3, data=(1 300 500 )
+max=7, sp=3, data=(1 3 5 )
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+動的割り当てを行うクラスの代入演算のとき起こる問題点は何か、どうやって解決するかをわかるようになりました。
+
+
+----------------------------------------
+[課題 11.6]
+
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_6.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+Complex(3.14,2.26) // Complex(double r, double i)
+Complex(const Complex&) // Complex(const Complex &c )
+Complex() // y宣言
+Complex(const Complex&)
+Complex(const Complex&) // x代入
+Complex() //c宣言
+operator=(const Complex& c)
+~Complex() //x
+~Complex() //y
+~Complex() //c デストラクタ
+6.28+4.52i //z
+~Complex() //x
+~Complex() //y
+~Complex() //z デストラクタ
+chosunghwa@joseongcBookAir B11 %
+
+
+----------------------------------------
+[課題 11.7]
+
+結果：
+
+chosunghwa@joseongcBookAir B11 % g++ 3_7.cpp
+3_7.cpp:3:1: error: unknown type name 'stack'
+stack plus(stack s1, stack s2)
+^
+3_7.cpp:3:12: error: unknown type name 'stack'
+stack plus(stack s1, stack s2)
+           ^
+3_7.cpp:3:22: error: unknown type name 'stack'
+stack plus(stack s1, stack s2)
+                     ^
+3_7.cpp:6:5: error: unknown type name 'stack'
+    stack tmp(sz), s(sz);
+    ^
+3_7.cpp:6:22: error: expected ';' at end of declaration
+    stack tmp(sz), s(sz);
+                     ^
+                     ;
+3_7.cpp:22:12: error: use of undeclared identifier 's'
+    return s;
+           ^
+3_7.cpp:28:5: error: unknown type name 'stack'
+    stack s1(5);
+    ^
+3_7.cpp:29:5: error: unknown type name 'stack'
+    stack s2(5);
+    ^
+3_7.cpp:30:5: error: unknown type name 'stack'
+    stack s(10);
+    ^
+9 errors generated.
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+Stackい宣言されてないというエラーが出る
+
+----------------------------------------
+[課題 11.8]
+
+結果：
+
+chosunghwa@joseongcBookAir B11 % g++ 3_8.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+max=5, sp=3, data=(1 3 5 )
+max=5, sp=3, data=(1 3 5 )
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+コピーコンストラクタを作成することができるようになりました。
+
+----------------------------------------
+[課題 11.9]
+
+結果：
+chosunghwa@joseongcBookAir B11 % g++ 3_9s.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+max=5, sp=3, data=(1 3 5 )
+max=5, sp=3, data=(1 3 5 )
+chosunghwa@joseongcBookAir B11 %
+
+hosunghwa@joseongcBookAir B11 % g++ 3_9c.cpp
+chosunghwa@joseongcBookAir B11 % ./a.out
+Complex(3.14,2.26)
+Complex(const Complex&)
+Complex()
+Complex(const Complex&)
+Complex(const Complex&)
+Complex()
+operator=(const Complex& c)
+~Complex()
+~Complex()
+~Complex()
+6.28+4.52i
+~Complex()
+~Complex()
+~Complex()
+chosunghwa@joseongcBookAir B11 %
+
+感想：
+
+新しいコンストラクタの書き方をわかりました。
+
+----------------------------------------
+
+[課題 B11 の感想]
+
+コンストラクタ、デストラクタということをわかるようになりました。それによってC++をより深く理解できたように感じました。また代入する時の問題点、解決法を勉強するパートがい一番興味深いでした。
+
